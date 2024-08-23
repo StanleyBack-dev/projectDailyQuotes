@@ -1,0 +1,15 @@
+/* IMPORT BASIC STYLES */
+@import "../base/typography.css";
+
+/* IMPORT STYLES FOR COMPONENTS */
+@import "../components/alerts.css";
+@import "../components/button.css";
+@import "../components/extra.css";
+@import "../components/form.css";
+@import "../components/header.css";
+@import "../components/quote.css";
+
+/* IMPORT LAYOUT STYLES */
+@import "../layouts/email-signup.css";
+@import "../layouts/footer.css";
+@import "../layouts/infos.css";

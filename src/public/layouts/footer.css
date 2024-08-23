@@ -1,0 +1,14 @@
+/* FOOTER */
+footer {
+    background-color: #ffffff; 
+    color: #333;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+    border-top: 1px solid #ddd; /* SUBTLE LINE ABOVE FOOTER */
+}
+
+.footer-text {
+    margin: 0;
+    font-size: 0.9rem;
+}

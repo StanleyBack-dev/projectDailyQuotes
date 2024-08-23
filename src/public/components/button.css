@@ -1,0 +1,17 @@
+/* REGISTRATION BUTTON */
+.button {
+    background-color: #00796b; /* SOFT GREEN */
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: #004d40; /* DARK GREEN ON MOUSE */
+    transform: translateY(-2px);
+}
