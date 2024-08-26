@@ -198,13 +198,13 @@ const apiEmail = async (sender, recipients, subject, text) => {
         <hr class="section-divider">
         <div class="invitation">
             <p>Gostou da frase de hoje? Visite nosso site para mais frases inspiradoras e conteúdos exclusivos!</p>
-            <a href="https://www.seusfrases.com" target="_blank">Acesse o site do Suas Frases Diárias </a>
+            <a href="https://suasfrases.vercel.app/" target="_blank">Acesse o site do Suas Frases Diárias </a>
         </div>
         <div class="additional-content">
             <p>Além das frases diárias, explore:</p>
             <ul style="list-style: none; padding: 0;">
-                <li><a href="https://www.seusfrases.com/tema">Frases por Tema</a></li>
-                <li><a href="https://www.seusfrases.com/autor">Sobre os Autores</a></li>
+                <li><a href="https://suasfrases.vercel.app/citacoes">Frases por Tema</a></li>
+                <li><a href="https://suasfrases.vercel.app/biografias">Sobre os Autores</a></li>
             </ul>
         </div>
         <hr class="section-divider">
