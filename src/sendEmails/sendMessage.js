@@ -11,8 +11,8 @@ const sendMessageEmail = async () => {
 
         // INITIALIZING THE VARIABLES FOR SENDING THE EMAIL
         const emailMessage = await getPhrases();
-        //const emails = await getEmails();
-        const emails = process.env.RECEIVER_EMAIL_TEST;
+        const emails = await getEmails();
+        //const emails = process.env.RECEIVER_EMAIL_TEST.split(',');
         const emailSubject = 'Sua Frase diária acabou de chegar! 📕';
         const sender = process.env.SENDER_EMAIL;
 
