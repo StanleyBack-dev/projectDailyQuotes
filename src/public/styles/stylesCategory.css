@@ -1,0 +1,160 @@
+/* Importando as fontes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #1f1f1f;
+    --secondary-color: #f0f0f0;
+    --accent-color: #ff6f61;
+    --background-color: #ffffff;
+    --text-color: #1f1f1f;
+    --heading-color: #0d0d0d;
+    --card-bg-color: #ffffff;
+    --card-border-color: #e0e0e0;
+    --modal-bg-color: #2b2b2b;
+    --modal-text-color: #ffffff;
+    --footer-color: #2b2b2b;
+    --button-color: #ffffff;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menu de navegação superior */
+nav {
+    background-color: #2b2b2b; /* Fundo do menu superior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap; /* Adiciona quebra de linha quando necessário */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-family: 'Merriweather', serif;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 15px 20px;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efeito de hover no menu superior */
+nav ul li a:hover {
+    color: #e63946;
+    background-color: #393939;
+    border-radius: 8px;
+}
+
+/* Linha decorativa sob o link ativo no menu */
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: #e63946;
+    transition: width 0.3s ease;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.categories-section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.category-card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: 10px;
+    padding: 20px 30px;
+    font-size: 1.2em;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: var(--accent-color);
+    color: var(--button-color);
+}
+
+.quotes-section {
+    text-align: center;
+}
+
+.quotes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.quote-card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 1em;
+    color: var(--text-color);
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quote-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: var(--footer-color);
+    padding: 20px 0;
+    text-align: center;
+    color: var(--button-color);
+}

@@ -17,7 +17,7 @@ const createEmails = async (email) => {
 
             if (existingData.status === true) {
                 // IF THE EMAIL IS ALREADY REGISTERED AND ACTIVE, IT DOES NOTHING
-                return { success: false, message: "Email já cadastrado e ativo." };
+                return { success: false, message: "⚠️ O e-mail fornecido já está cadastrado e ativo em nossa base de dados." };
             } else {
                 // IF THE EMAIL EXISTS BUT IS INACTIVE, REACTIVATE THE STATUS
                 const docRef = doc(dbFirebase, 'subscribers', existingDoc.id);
@@ -25,7 +25,7 @@ const createEmails = async (email) => {
                     status: true,
                     dateSubscribers: Timestamp.now(),
                 });
-                return { success: true, message: "E-mail reativado com sucesso." };
+                return { success: true, message: "🚀 E-mail reativado com sucesso! Estamos felizes em tê-lo de volta na nossa comunidade." };
             }
         } else {
             // IF THE EMAIL DOES NOT EXIST, REGISTER A NEW EMAIL
@@ -34,7 +34,7 @@ const createEmails = async (email) => {
                 status: true,
                 dateSubscribers: Timestamp.now(),
             });
-            return { success: true, message: "E-mail cadastrado com sucesso." };
+            return { success: true, message: "🎉 Bem-vindo à nossa comunidade! Seu e-mail foi cadastrado com sucesso. Estamos felizes em ter você conosco!" };
         }
     } catch (error) {
         console.error("Erro ao adicionar ou atualizar e-mail:", error);

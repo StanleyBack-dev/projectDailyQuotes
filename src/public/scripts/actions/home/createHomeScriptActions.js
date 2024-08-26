@@ -30,6 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         setTimeout(() => {
             location.reload();
-        }, 3000); 
+        }, 5000); 
     });
 });

@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Emails</title>
     <link rel="stylesheet" href="../styles/stylesHome.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@400;700&display=swap"
-        rel="stylesheet">
-        <link rel="icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -34,17 +32,13 @@
                     <p id="activeReaders" class="active-readers">
                         Junte-se à nossa turma de <span id="readersCount">...</span> leitores ativos
                     </p>
-                    <!-- Label e feedback visual para o formulário -->
                     <form id="emailForm" class="form-element" aria-labelledby="form-heading">
-                        <input type="email" id="email" name="email" placeholder="Insira seu email" required
-                            class="form-input" aria-required="true">
+                        <input type="email" id="email" name="email" placeholder="Insira seu email" required class="form-input" aria-required="true">
                         <button type="submit" class="button">
                             Inscreva-se ( Grátis )
                             <span id="loading-icon" class="hidden">🔄</span> <!-- Ícone de carregamento -->
                         </button>
                     </form>
-
-                    <!-- Div para exibir as frases vindas do Firebase -->
                     <div id="quoteDisplay" class="quote-display">
                         <!-- As citações serão inseridas dinamicamente aqui -->
                     </div>
@@ -53,10 +47,8 @@
                 <div class="info-container">
                     <h2 class="info-heading">O que é a Sua Frase Diária?</h2>
                     <p class="info-text">
-                        A Sua Frase Diária é uma newsletter dedicada a inspirar o seu dia com citações profundas e
-                        motivadoras.
-                        Toda manhã, às 8h, você receberá uma nova frase diretamente no seu e-mail, selecionada para
-                        trazer clareza,
+                        A Sua Frase Diária é uma newsletter dedicada a inspirar o seu dia com citações profundas e motivadoras.
+                        Toda manhã, às 8h, você receberá uma nova frase diretamente no seu e-mail, selecionada para trazer clareza,
                         motivação e um toque de sabedoria para começar o dia com o pé direito.
                     </p>
                     <p class="info-text">
@@ -72,10 +64,9 @@
     <footer>
         <p class="footer-text">&copy; 2024 Sua Frase Diária</p>
     </footer>
-
+    <script type="module" src="../scripts/notifications/messages.js"></script>
     <script type="module" src="../scripts/actions/home/createHomeScriptActions.js"></script>
     <script type="module" src="../scripts/actions/home/getHomeScriptActions.js"></script>
-    <script type="module" src="../scripts/notifications/messages.js"></script>
 </body>
 
 </html>
