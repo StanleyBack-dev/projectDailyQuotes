@@ -1,4 +1,4 @@
-import { updateEmails } from '../models/updateEmailsModel.js';
+import { updateEmails } from '../../models/emailsModels/updateEmailsModel.js';
 
 const updateEmailsController = async (req, res) => {
     try {

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografias</title>
+    <link rel="stylesheet" href="../styles/stylesBiography.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/" class="nav-link">Newsletter</a></li>
+                <li><a href="/biografias" class="nav-link">Biografias</a></li>
+                <li><a href="/citacoes" class="nav-link">Citações</a></li>
+                <li><a href="/categorias" class="nav-link">Categorias</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="biography-section">
+            <div class="biography-container">
+                <h1 class="typography-heading">Autores</h1>
+                <div id="authorsGallery" class="authors-gallery">
+                    <!-- Os autores serão inseridos dinamicamente aqui -->
+                    <div class="author-card">
+                        <img src="author1.jpg" alt="Autor 1">
+                        <h2>Autor 1</h2>
+                        <p>Descrição breve sobre o autor.</p>
+                    </div>
+                    <div class="author-card">
+                        <img src="author2.jpg" alt="Autor 2">
+                        <h2>Autor 2</h2>
+                        <p>Descrição breve sobre o autor.</p>
+                    </div>
+                    <!-- Mais autores -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-text">&copy; 2024 Sua Frase Diária</p>
+    </footer>
+
+    <!-- Modal para exibir detalhes da biografia -->
+    <div id="biographyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeModal">&times;</span>
+            <div id="biographyDetails" class="biography-details">
+                <!-- As informações da biografia serão inseridas dinamicamente aqui -->
+                <h2>Nome do Autor</h2>
+                <p>Detalhes sobre a biografia do autor. Informações detalhadas serão exibidas aqui.</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../scripts/actions/biography/getBiographyScriptActions.js"></script>
+    <script type="module" src="../scripts/notifications/messages.js"></script>
+</body>
+
+</html>

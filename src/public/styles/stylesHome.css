@@ -1,0 +1,310 @@
+/* Importando as fontes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #1f1f1f;
+    --secondary-color: #f0f0f0;
+    --accent-color: #ff6f61;
+    --background-color: #ffffff;
+    --text-color: #1f1f1f;
+    --heading-color: #0d0d0d;
+    --form-bg-color: #f9f9f9;
+    --form-border-color: #e0e0e0;
+    --button-bg-color: #0d0d0d;
+    --button-text-color: #ffffff;
+    --hover-bg-color: var(--accent-color);
+    --hover-text-color: #ffffff;
+}
+
+body {
+    background-color: var(--primary-color); /* Fundo escuro para contraste */
+    color: var(--secondary-color); /* Cor de texto clara para legibilidade */
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 15px 0;
+    text-align: center;
+}
+
+/* Menu de navegação superior */
+nav {
+    background-color: #2b2b2b; /* Fundo do menu superior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap; /* Adiciona quebra de linha quando necessário */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-family: 'Merriweather', serif;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 15px 20px;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efeito de hover no menu superior */
+nav ul li a:hover {
+    color: #e63946;
+    background-color: #393939;
+    border-radius: 8px;
+}
+
+/* Linha decorativa sob o link ativo no menu */
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: #e63946;
+    transition: width 0.3s ease;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.email-signup {
+    background-color: var(--form-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin-bottom: 60px;
+}
+
+.typography-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: var(--heading-color);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.active-readers {
+    font-size: 1.1em;
+    color: var(--accent-color);
+    margin-bottom: 25px;
+}
+
+.form-container {
+    background-color: var(--form-bg-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+    font-size: 1em;
+    border: 1px solid var(--form-border-color);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.button {
+    padding: 15px 30px;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    font-size: 1.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: var(--hover-bg-color);
+    transform: translateY(-3px);
+}
+
+.hidden {
+    display: none;
+}
+
+.quote-display {
+    margin-top: 30px;
+    font-family: 'Playfair Display', serif;
+    color: var(--heading-color);
+    font-size: 1.3em;
+}
+
+/* Container de informações */
+.info-container {
+    background-color: #f5f5f5; /* Fundo do container mais claro */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    margin-top: 50px;
+    position: relative;
+    overflow: hidden;
+    border-left: 5px solid #e63946; /* Cor de destaque para a borda esquerda */
+}
+
+/* Textura sutil no fundo do container */
+.info-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/paper.png');
+    opacity: 0.05;
+    z-index: 0;
+}
+
+/* Título da seção */
+.info-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: #333333; /* Cor do título para contraste com o fundo do container */
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Texto informativo */
+.info-text {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #444444; /* Cor do texto para harmonizar com o título */
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Primeiro parágrafo com texto destacado */
+.info-text:first-of-type {
+    font-weight: 600;
+    color: #e63946; /* Cor de destaque para a primeira frase */
+}
+
+/* Slogan inspirador */
+.info-slogan {
+    font-size: 1.5em;
+    font-weight: 300;
+    font-style: italic;
+    color: #e63946; /* Cor do slogan para combinar com os elementos de destaque */
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid #cccccc; /* Linha discreta para separar o slogan */
+    padding-top: 20px;
+    text-align: center;
+}
+
+/* Elemento decorativo no container */
+.info-container::after {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background-color: #e63946; /* Cor decorativa combinando com os destaques */
+    border-radius: 50%;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+
+/* Menu inferior (rodapé) */
+footer {
+    background-color: #2b2b2b; /* Fundo do menu inferior */
+    padding: 20px 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap; /* Adiciona quebra de linha quando necessário */
+}
+
+.footer-menu li {
+    margin: 0 20px;
+}
+
+.footer-menu li a {
+    font-family: 'Merriweather', serif;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.footer-menu li a:hover {
+    color: #e63946;
+}
+
+/* Texto do rodapé */
+footer .footer-text {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Responsividade do menu inferior */
+@media screen and (max-width: 768px) {
+    .footer-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-menu li {
+        margin: 10px 0;
+    }
+}

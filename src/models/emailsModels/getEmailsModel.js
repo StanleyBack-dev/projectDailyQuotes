@@ -1,4 +1,4 @@
-import { dbFirebase } from "../../firebaseConfig.js";
+import { dbFirebase } from "../../../firebaseConfig.js";
 import { collection, query, where, getDocs, getCountFromServer } from 'firebase/firestore';
 
 // FUNCTION TO SEARCH E-MAILS REGISTERED IN FIRESTORE

@@ -8,8 +8,11 @@
 @import "../components/form.css";
 @import "../components/header.css";
 @import "../components/quote.css";
+@import "../components/modal.css";
 
 /* IMPORT LAYOUT STYLES */
 @import "../layouts/email-signup.css";
 @import "../layouts/footer.css";
 @import "../layouts/infos.css";
+@import "../layouts/biography.css";
+

@@ -1,0 +1,197 @@
+/* Importando as fontes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #1f1f1f;
+    --secondary-color: #f0f0f0;
+    --accent-color: #ff6f61;
+    --background-color: #ffffff;
+    --text-color: #1f1f1f;
+    --heading-color: #0d0d0d;
+    --card-bg-color: #ffffff;
+    --card-border-color: #e0e0e0;
+    --header-bg-color: #2b2b2b;
+    --footer-bg-color: #2b2b2b;
+    --footer-text-color: #ffffff;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menu de navegação superior */
+nav {
+    background-color: #2b2b2b; /* Fundo do menu superior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap; /* Adiciona quebra de linha quando necessário */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-family: 'Merriweather', serif;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 15px 20px;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efeito de hover no menu superior */
+nav ul li a:hover {
+    color: #e63946;
+    background-color: #393939;
+    border-radius: 8px;
+}
+
+/* Linha decorativa sob o link ativo no menu */
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: #e63946;
+    transition: width 0.3s ease;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+header {
+    background-color: var(--header-bg-color);
+    color: var(--footer-text-color);
+    padding: 15px 0;
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.quote-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.quote-card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+.quote-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.quote-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quote-author {
+    font-family: 'Merriweather', serif;
+    font-size: 1.5em;
+    color: var(--heading-color);
+    margin: 0;
+}
+
+.quote-date {
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+.quote-content {
+    font-size: 1.2em;
+    font-style: italic;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.quote-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    padding: 15px 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .quote-card {
+        padding: 15px;
+    }
+
+    .quote-author {
+        font-size: 1.2em;
+    }
+
+    .quote-content {
+        font-size: 1em;
+    }
+
+    .tag {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .quote-card {
+        padding: 10px;
+    }
+
+    .quote-author {
+        font-size: 1em;
+    }
+
+    .quote-content {
+        font-size: 0.9em;
+    }
+
+    .tag {
+        font-size: 0.7em;
+    }
+}

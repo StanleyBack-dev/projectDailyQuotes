@@ -1,4 +1,4 @@
-import { createEmails } from './../models/createEmailsModel.js';
+import { createEmails } from './../../models/emailsModels/createEmailsModel.js';
 
 // FUNCTION TO REGISTER A NEW EMAIL
 const createEmailsController = async (req, res) => {

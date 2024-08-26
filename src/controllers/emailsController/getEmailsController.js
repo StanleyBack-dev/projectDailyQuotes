@@ -1,4 +1,4 @@
-import { getEmails, getCountEmails } from '../models/getEmailsModel.js';
+import { getEmails, getCountEmails } from '../../models/emailsModels/getEmailsModel.js';
 
 // FUNCTION TO GET SUBSCRIBED EMAILS
 const getEmailsController = async (req, res) => {

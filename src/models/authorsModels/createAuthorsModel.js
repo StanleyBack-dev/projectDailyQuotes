@@ -14,18 +14,29 @@ const createAuthor = async (authorData) => {
         // Adiciona o timestamp de registro atual, caso ainda não esteja presente
         authorData.dateRegistered = authorData.dateRegistered || Timestamp.now();
 
+        let uid;
+
         if (!querySnapshot.empty) {
             // Se o autor já existir, atualizar os dados
             const existingDoc = querySnapshot.docs[0]; 
             const docRef = doc(dbFirebase, 'authors', existingDoc.id);
 
+            // Atualiza o documento com o `uid` existente
+            authorData.uid = existingDoc.id;
+            uid = existingDoc.id;
+
             await updateDoc(docRef, authorData);
-            return { success: true, message: "Autor atualizado com sucesso." };
         } else {
             // Se o autor não existir, criar um novo registro
-            await addDoc(authorsCollection, authorData);
-            return { success: true, message: "Autor cadastrado com sucesso." };
+            const newDocRef = await addDoc(authorsCollection, authorData);
+
+            // Atualiza o documento recém-criado com o `uid`
+            uid = newDocRef.id;
+            await updateDoc(newDocRef, { uid: uid });
         }
+
+        // Retorna apenas o UID
+        return uid;
     } catch (error) {
         console.error("Erro ao adicionar ou atualizar autor:", error);
         throw error;

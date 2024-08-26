@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Emails</title>
-    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/stylesHome.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@400;700&display=swap"
         rel="stylesheet">
@@ -15,10 +15,10 @@
     <header>
         <nav>
             <ul>
-                <li><a href="index.html" class="nav-link">Biografias</a></li>
-                <li><a href="frases.html" class="nav-link">Citações</a></li>
-                <li><a href="frases.html" class="nav-link">Autores</a></li>
-                <li><a href="frases.html" class="nav-link">Categorias</a></li>
+                <li><a href="/" class="nav-link">Newsletter</a></li>
+                <li><a href="/biografias" class="nav-link">Biografias</a></li>
+                <li><a href="/citacoes" class="nav-link">Citações</a></li>
+                <li><a href="/categorias" class="nav-link">Categorias</a></li>
             </ul>
         </nav>
     </header>
@@ -72,10 +72,9 @@
         <p class="footer-text">&copy; 2024 Sua Frase Diária</p>
     </footer>
 
-    <script type="module" src="../scripts/actions/createActions/createHomeScriptActions.js"></script>
-    <script type="module" src="../scripts/actions/getActions/getHomeScriptActions.js"></script>
+    <script type="module" src="../scripts/actions/home/createHomeScriptActions.js"></script>
+    <script type="module" src="../scripts/actions/home/getHomeScriptActions.js"></script>
     <script type="module" src="../scripts/notifications/messages.js"></script>
-    <script type="module" src="../scripts/validations/homeScriptValidation.js"></script>
 </body>
 
 </html>

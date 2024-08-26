@@ -1,4 +1,4 @@
-import { dbFirebase } from "../../firebaseConfig.js";
+import { dbFirebase } from "../../../firebaseConfig.js";
 import { collection, query, where, getDocs, updateDoc, doc } from 'firebase/firestore';
 
 const updateEmails = async (email) => {
