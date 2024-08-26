@@ -76,7 +76,6 @@ app.get("/biografias", (req, res) => {
     });
   });
   
-
 // CALLING THE EMAILS SEND FUNCTION
 sendMessageEmail();
 
