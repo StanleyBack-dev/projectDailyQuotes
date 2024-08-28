@@ -1,5 +1,5 @@
 import { dbFirebase } from "../../../firebaseConfig.js";
-import { collection, query, getDocs, orderBy, limit } from 'firebase/firestore';
+import { collection, query, getDocs, doc, getDoc, orderBy, limit } from 'firebase/firestore';
 
 // Função para buscar todas as citações
 const getAllQuotes = async () => {
