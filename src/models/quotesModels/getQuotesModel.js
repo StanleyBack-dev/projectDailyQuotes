@@ -1,5 +1,5 @@
 import { dbFirebase } from "../../../firebaseConfig.js";
-import { collection, query, orderBy, limit, getDocs, doc, getDoc } from 'firebase/firestore';
+import { collection, query, getDocs, orderBy, limit } from 'firebase/firestore';
 
 // Função para buscar todas as citações
 const getAllQuotes = async () => {
@@ -75,10 +75,29 @@ const getLastQuote = async () => {
         // Verifica se o campo dateRegistered existe antes de usar toDate()
         if (lastQuote.dateRegistered) {
             const lastQuoteDate = lastQuote.dateRegistered.toDate().toISOString().split('T')[0]; // Formata a data YYYY-MM-DD
-            const currentDate = new Date().toISOString().split('T')[0];
 
-            // Retorna a citação se a data for hoje, caso contrário retorna null
-            return lastQuoteDate === currentDate ? lastQuote : null;
+            // Ajusta o horário de Brasília (UTC-3)
+            const currentDate = new Date();
+            const currentBrasiliaTime = new Date(currentDate.getTime() - 3 * 60 * 60 * 1000);
+            const currentDateFormatted = currentBrasiliaTime.toISOString().split('T')[0];
+            const currentHour = currentBrasiliaTime.getUTCHours(); // Pega a hora no formato UTC
+
+            // Verifica se a data da última citação é hoje e se está no intervalo de 8h-9h
+            if (lastQuoteDate === currentDateFormatted) {
+                const lastQuoteHour = lastQuote.dateRegistered.toDate().getUTCHours();
+                if (lastQuoteHour >= 8 && lastQuoteHour < 9) {
+                    console.log("Já existe uma citação registrada entre 8h e 9h para hoje.");
+                    return null;
+                }
+            }
+
+            // Verifica se o horário atual está dentro do intervalo permitido (8h-9h)
+            if (currentHour >= 8 && currentHour < 9) {
+                return lastQuote;
+            } else {
+                console.log("Fora do horário permitido para envio (8h-9h).");
+                return null;
+            }
         } else {
             console.log("O campo 'dateRegistered' não está presente no documento.");
             return null;
