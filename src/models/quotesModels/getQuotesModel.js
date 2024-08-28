@@ -1,5 +1,5 @@
 import { dbFirebase } from "../../../firebaseConfig.js";
-import { collection, query, getDocs, doc, getDoc } from 'firebase/firestore';
+import { collection, query, orderBy, limit, getDocs, doc, getDoc } from 'firebase/firestore';
 
 // Função para buscar todas as citações
 const getAllQuotes = async () => {
@@ -57,4 +57,37 @@ const getAuthorNameByUid = async (uid) => {
     }
 };
 
-export { getAllQuotes, getAuthorNameByUid };
+// Função para buscar a última citação
+const getLastQuote = async () => {
+    try {
+        // Cria uma query para ordenar as citações pela data de registro e pegar a última
+        const quotesCollection = collection(dbFirebase, 'quotes');
+        const lastQuoteQuery = query(quotesCollection, orderBy('dateRegistered', 'desc'), limit(1));
+        const querySnapshot = await getDocs(lastQuoteQuery);
+
+        if (querySnapshot.empty) {
+            console.log("Nenhuma citação encontrada.");
+            return null;
+        }
+
+        const lastQuote = querySnapshot.docs[0].data();
+
+        // Verifica se o campo dateRegistered existe antes de usar toDate()
+        if (lastQuote.dateRegistered) {
+            const lastQuoteDate = lastQuote.dateRegistered.toDate().toISOString().split('T')[0]; // Formata a data YYYY-MM-DD
+            const currentDate = new Date().toISOString().split('T')[0];
+
+            // Retorna a citação se a data for hoje, caso contrário retorna null
+            return lastQuoteDate === currentDate ? lastQuote : null;
+        } else {
+            console.log("O campo 'dateRegistered' não está presente no documento.");
+            return null;
+        }
+
+    } catch (error) {
+        console.error("Erro ao buscar a última citação registrada: ", error);
+        throw error;
+    }
+};
+
+export { getAllQuotes, getAuthorNameByUid, getLastQuote };

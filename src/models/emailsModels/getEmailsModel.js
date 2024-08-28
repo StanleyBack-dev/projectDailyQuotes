@@ -34,4 +34,4 @@ const getCountEmails = async () => {
     }
 };
 
-export { getEmails, getCountEmails };
+export { getEmails, getCountEmails};
