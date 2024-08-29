@@ -2,7 +2,8 @@ name: Run Production Script
 
 on:
   schedule:
-    - cron: '0 11 * * *' 
+    # Executa todos os dias às 04:27 UTC, que corresponde a 01:27 no horário de Brasília (BRT)
+    - cron: '30 4 * * *' 
 
 jobs:
   run-production:
@@ -20,6 +21,9 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Start Express Server
+      run: node index.js &  # Esse comando iniciará o servidor em segundo plano
+
     - name: Run production script
       env:
         MAILJET_API_KEY: ${{ secrets.MAILJET_API_KEY }}
@@ -33,4 +37,4 @@ jobs:
         STORAGE_BUCKET_FIREBASE: ${{ secrets.STORAGE_BUCKET_FIREBASE }}
         MESSAGING_SENDER_ID_FIREBASE: ${{ secrets.MESSAGING_SENDER_ID_FIREBASE }}
         APP_ID_FIREBASE: ${{ secrets.APP_ID_FIREBASE }}
-      run: npm start
+      run: node src/sendEmails/sendMessage.js

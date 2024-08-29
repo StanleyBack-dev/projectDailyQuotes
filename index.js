@@ -5,7 +5,7 @@ import router from "./src/routes/routing.js";
 import fs from "fs";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-import { sendMessageEmail } from "./src/sendEmails/sendMessage.js";
+//import { sendMessageEmail } from "./src/sendEmails/sendMessage.js";
 
 dotenv.config();
 
@@ -77,7 +77,7 @@ app.get("/biografias", (req, res) => {
   });
   
 // CALLING THE EMAILS SEND FUNCTION
-sendMessageEmail();
+//sendMessageEmail();
 
 // START SERVER
 app.listen(port, () => {
