@@ -10,8 +10,8 @@ const sendMessageEmail = async () => {
 
         // Se não houver citação registrada para hoje, prossegue com o envio do email
         const emailMessage = await getPhrases();
-        //const emails = await getEmails();
-        const emails = process.env.RECEIVER_EMAIL_TEST.split(',');
+        const emails = await getEmails();
+        //const emails = process.env.RECEIVER_EMAIL_TEST.split(',');
         const emailSubject = 'Sua Frase diária acabou de chegar! 📕';
         const sender = process.env.SENDER_EMAIL;
 

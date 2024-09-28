@@ -1,7 +1,7 @@
 import Mailjet from "node-mailjet";
 import dotenv from "dotenv";
 import { calcDaysByYear } from "../calc/calcDays.js";
-import { getLastAuthor } from "../models/authorsModels/getAuthorsModel.js"; // Ajuste o caminho conforme necessário
+import { getLastAuthor } from "../models/authorsModels/getAuthorsModel.js";
 
 dotenv.config();
 
