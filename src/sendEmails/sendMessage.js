@@ -1,6 +1,7 @@
 import { apiEmail } from "../api/apiEmail.js";
 import { getPhrases } from "../api/apiPhrases.js";
 import { sendPromptToCohere } from '../api/apiCohere.js'; 
+import { getEmails } from "../models/emailsModels/getEmailsModel.js";
 import dotenv from 'dotenv';
 
 dotenv.config();
