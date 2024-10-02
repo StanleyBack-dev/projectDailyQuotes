@@ -1,4 +1,4 @@
-/* Importando as fontes */
+/* IMPORTING SOURCES */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@400;700&display=swap');
 
 :root {
@@ -23,9 +23,8 @@ body {
     padding: 0;
 }
 
-/* Menu de navegação superior */
 nav {
-    background-color: #2b2b2b; /* Fundo do menu superior */
+    background-color: #2b2b2b;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
@@ -38,7 +37,7 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    flex-wrap: wrap; /* Adiciona quebra de linha quando necessário */
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -56,14 +55,12 @@ nav ul li a {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Efeito de hover no menu superior */
 nav ul li a:hover {
     color: #e63946;
     background-color: #393939;
     border-radius: 8px;
 }
 
-/* Linha decorativa sob o link ativo no menu */
 nav ul li a::after {
     content: '';
     display: block;

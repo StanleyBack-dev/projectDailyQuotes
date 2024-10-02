@@ -5,15 +5,15 @@ const updateEmails = async (email) => {
     try {
         const subscribersCollection = collection(dbFirebase, 'subscribers');
 
-        // Query para verificar se o e-mail já está cadastrado
+        // QUERY TO CHECK IF THE EMAIL IS ALREADY REGISTERED
         const q = query(subscribersCollection, where('email', '==', email));
         const querySnapshot = await getDocs(q);
 
         if (!querySnapshot.empty) {
-            const existingDoc = querySnapshot.docs[0];  // Considerando que e-mails são únicos
+            const existingDoc = querySnapshot.docs[0];
             const docRef = doc(dbFirebase, 'subscribers', existingDoc.id);
 
-            // Atualiza o status do e-mail para false (inativo)
+            // UPDATE EMAIL STATUS TO FALSE (INACTIVE)
             await updateDoc(docRef, {
                 status: false
             });
@@ -23,7 +23,7 @@ const updateEmails = async (email) => {
             return { success: false, message: "E-mail não encontrado." };
         }
     } catch (error) {
-        console.error("Erro ao inativar o e-mail:", error);
+        console.error("Error deactivating email:", error);
         throw error;
     }
 };

@@ -25,7 +25,7 @@ const getPhrases = async () => {
 
     } catch (error) {
         console.error(`Error getting or sending quote: ${error.message}`);
-        return null; // Retornar null em caso de erro
+        return null; // RETURN NULL ON ERROR
     }
 };
 

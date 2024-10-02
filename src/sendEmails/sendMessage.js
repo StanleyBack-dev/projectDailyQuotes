@@ -10,25 +10,25 @@ const sendMessageEmail = async () => {
     try {
         const result = await getPhrases();
         if (!result) {
-            throw new Error("Erro ao obter a frase."); 
+            throw new Error("Error getting phrase."); 
         }
 
         const { quote, author } = result; 
         const cohereContent = await sendPromptToCohere(author);
         if (!cohereContent) {
-            throw new Error("Conteúdo gerado pela Cohere está vazio.");
+            throw new Error("Cohere generated content is empty.");
         }
 
-        const emails = await getEmails();
         //const emails = process.env.RECEIVER_EMAIL_TEST.split(',');
+        const emails = await getEmails();
         const emailSubject = 'Sua Frase diária acabou de chegar! 📕';
         const sender = process.env.SENDER_EMAIL;
         const quotes = `"${quote}"\n- ${author}`;
         
-        // Extraindo cada tópico do objeto cohereContent
+        // EXTRACTING EACH TOPIC FROM THE COHERECONTENT OBJECT
         const { reflection, challenge, story, curiosity } = cohereContent;
 
-        // Chamando a API de email com cada tópico separado
+        // CALLING THE EMAIL API WITH EACH TOPIC SEPARATE
         await apiEmail(sender, emails, emailSubject, quotes, reflection, challenge, story, curiosity);
         
         console.log('Message sent successfully!');

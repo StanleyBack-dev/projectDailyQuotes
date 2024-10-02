@@ -4,20 +4,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function fetchQuotes() {
     try {
-        // Fazendo a requisição à API
+        // MAKING THE API REQUEST
         const response = await fetch('/quotes');
         
-        // Verificando se a resposta foi bem-sucedida
+        // CHECKING IF THE RESPONSE WAS SUCCESSFUL
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
 
-        // Convertendo a resposta para JSON
+        // CONVERTING THE RESPONSE TO JSON
         const data = await response.json();
         console.log('Citações recebidas:', data);
         
-        // Atualizando o DOM com as citações
-        displayQuotes(data.data); // Acessando a chave 'data'
+        // UPDATING THE DOM WITH QUOTES
+        displayQuotes(data.data);
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
     }
@@ -26,7 +26,7 @@ async function fetchQuotes() {
 function displayQuotes(quotes) {
     const container = document.querySelector('.quote-container');
     
-    // Limpa o container antes de adicionar as citações
+    // CLEAR THE CONTAINER BEFORE ADDING QUOTES
     container.innerHTML = '';
 
     // Itera sobre cada citação e cria um elemento para ela
@@ -34,7 +34,7 @@ function displayQuotes(quotes) {
         const quoteCard = document.createElement('div');
         quoteCard.classList.add('quote-card');
 
-        // Criando o HTML para o cartão de citação
+        // CREATING THE HTML FOR THE QUOTE CARD
         quoteCard.innerHTML = `
             <div class="quote-header">
                 <h2 class="quote-author">${quote.author}</h2>
@@ -47,7 +47,7 @@ function displayQuotes(quotes) {
             </div>
         `;
 
-        // Adiciona o cartão de citação ao container
+        // ADD QUOTE CARD TO CONTAINER
         container.appendChild(quoteCard);
     });
 }

@@ -1,10 +1,10 @@
 import { dbFirebase } from "../../../firebaseConfig.js";
 import { collection, getDocs, doc, getDoc } from 'firebase/firestore';
 
-// Função para buscar todas as citações
+// FUNCTION TO SEARCH ALL CITATIONS
 const getAllQuotes = async () => {
     try {
-        // Coleta de citações
+
         const quotesCollection = collection(dbFirebase, 'quotes');
         const quotesSnapshot = await getDocs(quotesCollection);
         const quotesList = quotesSnapshot.docs.map(doc => ({
@@ -12,18 +12,18 @@ const getAllQuotes = async () => {
             ...doc.data()
         }));
 
-        // Busca os autores
+        // SEARCH FOR AUTHORS
         const authorUids = [...new Set(quotesList.map(quote => quote.author))];
         const authorsPromises = authorUids.map(uid => getAuthorNameByUid(uid));
         const authors = await Promise.all(authorsPromises);
 
-        // Mapeia os nomes dos autores
+        // MAPS THE NAMES OF THE AUTHORS
         const authorsMap = authors.reduce((map, author) => {
             map[author.id] = author.nameAuthor;
             return map;
         }, {});
 
-        // Substitui os UIDs pelo nome do autor e remove a data
+        // REPLACE UIDS WITH AUTHOR NAME AND REMOVE DATE
         return quotesList.map(quote => ({
             id: quote.id,
             content: quote.content,
@@ -32,12 +32,12 @@ const getAllQuotes = async () => {
         }));
 
     } catch (error) {
-        console.error("Erro ao buscar todas as citações: ", error);
+        console.error("Error fetching all citations: ", error);
         throw error;
     }
 };
 
-// Função para buscar um autor pelo UID
+// FUNCTION TO SEARCH FOR AN AUTHOR BY UID
 const getAuthorNameByUid = async (uid) => {
     try {
         const authorDocRef = doc(dbFirebase, 'authors', uid);
@@ -49,10 +49,10 @@ const getAuthorNameByUid = async (uid) => {
                 nameAuthor: authorDoc.data().nameAuthor
             };
         } else {
-            throw new Error("Autor não encontrado");
+            throw new Error("Author not found");
         }
     } catch (error) {
-        console.error(`Erro ao buscar o autor com UID ${uid}: `, error);
+        console.error(`Error fetching author with UID ${uid}: `, error);
         throw error;
     }
 };

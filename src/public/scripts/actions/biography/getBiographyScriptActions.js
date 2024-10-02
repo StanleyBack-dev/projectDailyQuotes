@@ -5,7 +5,7 @@ const biographyModal = document.getElementById('biographyModal');
 const biographyDetails = document.getElementById('biographyDetails');
 const closeModal = document.getElementById('closeModal');
 
-// Fetch the list of authors from the API
+// FETCH THE LIST OF AUTHORS FROM THE API
 const fetchAuthors = async () => {
     try {
         const response = await fetch('/authors');
@@ -22,7 +22,7 @@ const fetchAuthors = async () => {
     }
 };
 
-// Display the list of authors in the gallery
+// DISPLAY THE LIST OF AUTHORS IN THE GALLERY
 const displayAuthors = (authors) => {
     authorsGallery.innerHTML = '';
 
@@ -37,7 +37,7 @@ const displayAuthors = (authors) => {
             <button class="view-biography" data-uid="${author.uid}">Ver Biografia Completa</button>
         `;
 
-        // Add event listener to the "Ver Biografia Completa" button
+        // ADD EVENT LISTENER TO THE "VER BIOGRAFIA COMPLETA" BUTTON
         authorCard.querySelector('.view-biography').addEventListener('click', () => {
             openBiographyModal(author);
         });
@@ -46,7 +46,7 @@ const displayAuthors = (authors) => {
     });
 };
 
-// Open the modal and display the full biography
+// OPEN THE MODAL AND DISPLAY THE FULL BIOGRAPHY
 const openBiographyModal = (author) => {
     biographyDetails.innerHTML = `
         <h2>${author.nameAuthor}</h2>
@@ -58,10 +58,10 @@ const openBiographyModal = (author) => {
     biographyModal.style.display = 'block';
 };
 
-// Close the modal
+// CLOSE THE MODAL
 closeModal.addEventListener('click', () => {
     biographyModal.style.display = 'none';
 });
 
-// Fetch authors when the page loads
+// FETCH AUTHORS WHEN THE PAGE LOADS
 document.addEventListener('DOMContentLoaded', fetchAuthors);

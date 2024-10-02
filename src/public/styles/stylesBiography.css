@@ -1,4 +1,4 @@
-/* Importando as fontes */
+/* IMPORTING SOURCES */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@400;700&display=swap');
 
 :root {
@@ -12,8 +12,8 @@
     --card-border-color: #e0e0e0;
     --modal-bg-color: #2b2b2b;
     --modal-text-color: #ffffff;
-    --footer-color: #2b2b2b; /* Cor do fundo do footer */
-    --button-color: #ffffff; /* Cor do texto do botão */
+    --footer-color: #2b2b2b; 
+    --button-color: #ffffff; 
 }
 
 body {
@@ -32,7 +32,7 @@ header {
 
 /* Menu de navegação superior */
 nav {
-    background-color: #2b2b2b; /* Fundo do menu superior */
+    background-color: #2b2b2b;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
@@ -45,7 +45,7 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    flex-wrap: wrap; /* Adiciona quebra de linha quando necessário */
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -63,14 +63,12 @@ nav ul li a {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Efeito de hover no menu superior */
 nav ul li a:hover {
     color: #e63946;
     background-color: #393939;
     border-radius: 8px;
 }
 
-/* Linha decorativa sob o link ativo no menu */
 nav ul li a::after {
     content: '';
     display: block;
@@ -132,8 +130,8 @@ main {
 
 .author-card img {
     width: 100%;
-    height: 200px; /* Altura fixa para todas as imagens */
-    object-fit: cover; /* Ajusta a imagem dentro do espaço definido */
+    height: 200px;
+    object-fit: cover;
 }
 
 .author-card h2 {
@@ -141,7 +139,7 @@ main {
     font-size: 1.5em;
     color: #000000;
     margin: 15px 0;
-    height: 60px; /* Altura fixa para os títulos */
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -151,12 +149,11 @@ main {
     font-size: 1em;
     color: #ff6f61;
     padding: 0 15px 15px;
-    height: 60px; /* Altura fixa para os textos */
+    height: 60px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/* Estilizando o botão de ver biografia completa */
 .author-card button {
     background-color: var(--footer-color);
     color: var(--button-color);
@@ -168,7 +165,7 @@ main {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     margin: 15px 0;
-    margin-top: auto; /* Empurra o botão para o final do card */
+    margin-top: auto;
 }
 
 .author-card button:hover {
@@ -190,10 +187,9 @@ footer {
 
 .footer-text {
     font-size: 0.9em;
-    color: var(--button-color); /* Cor do texto do footer igual ao do botão */
+    color: var(--button-color);
 }
 
-/* Estilo do modal */
 .modal {
     display: none;
     position: fixed;

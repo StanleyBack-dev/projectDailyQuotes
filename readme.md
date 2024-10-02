@@ -12,7 +12,7 @@
 
 Project Send Phrases is a tool developed to automate the sending of motivational phrases from various types of different authors, automatically generated through a specific API for generating phrases and another API for sending these phrases via email. The APIs used are detailed below:
 
-- **Sentence Generation API**: [Link to API](https://github.com/lukePeavey/quotable)
+- **Sentence Generation API**: [Link to API](https://zenquotes.io/)
 - **Email Sending API**: [Link to API](https://www.mailjet.com/)
 
 Recipients can be added manually in the project's `.env` file by setting them as environment variables. It is important to follow the example provided in the `.env.example` file to ensure correct credential configuration.

@@ -11,16 +11,16 @@ const updateEmailsController = async (req, res) => {
             });
         }
 
-        // Chama o modelo para inativar o e-mail
+        // CALL THE TEMPLATE TO DEACTIVATE THE EMAIL
         const result = await updateEmails(email);
 
-        // Envia a resposta com base no resultado do modelo
+        // SEND THE RESPONSE BASED ON THE RESULT OF THE MODEL
         res.status(result.success ? 200 : 404).json(result);
     } catch (error) {
-        console.error("Erro ao inativar o e-mail:", error);
+        console.error("Error deactivating email:", error);
         res.status(500).json({
             success: false,
-            message: "Erro ao inativar o e-mail."
+            message: "Error deactivating email."
         });
     }
 };

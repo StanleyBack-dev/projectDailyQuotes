@@ -32,11 +32,9 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "src/public/views/homeView.html"));
 });
 
-// Rota para servir a página de registro
 app.get("/biografias", (req, res) => {
     const registerFilePath = path.join(__dirname, "src/public/views/biographyView.html");
 
-    // Verifica se o arquivo existe antes de enviá-lo
     fs.access(registerFilePath, fs.constants.F_OK, (err) => {
         if (err) {
             console.error(`Arquivo "biographyView.html" não encontrado: ${err}`);
@@ -50,24 +48,9 @@ app.get("/biografias", (req, res) => {
 app.get("/citacoes", (req, res) => {
     const registerFilePath = path.join(__dirname, "src/public/views/quoteView.html");
 
-    // Verifica se o arquivo existe antes de enviá-lo
     fs.access(registerFilePath, fs.constants.F_OK, (err) => {
         if (err) {
             console.error(`Arquivo "quoteView.html" não encontrado: ${err}`);
-            return res.status(404).send("Página não encontrada");
-        }
-
-        res.sendFile(registerFilePath);
-    });
-});
-
-app.get("/categorias", (req, res) => {
-    const registerFilePath = path.join(__dirname, "src/public/views/categoryView.html");
-
-    // Verifica se o arquivo existe antes de enviá-lo
-    fs.access(registerFilePath, fs.constants.F_OK, (err) => {
-        if (err) {
-            console.error(`Arquivo "categoryView.html" não encontrado: ${err}`);
             return res.status(404).send("Página não encontrada");
         }
 

@@ -37,7 +37,7 @@ const createEmails = async (email) => {
             return { success: true, message: "🎉 Bem-vindo à nossa comunidade! Seu e-mail foi cadastrado com sucesso. Estamos felizes em ter você conosco!" };
         }
     } catch (error) {
-        console.error("Erro ao adicionar ou atualizar e-mail:", error);
+        console.error("Error adding or updating email:", error);
         throw error;
     }
 };

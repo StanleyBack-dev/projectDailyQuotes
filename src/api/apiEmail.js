@@ -30,7 +30,7 @@ const apiEmail = async (sender, recipients, subject, text, reflection, challenge
                 font-family: 'Roboto', sans-serif;
                 margin: 0;
                 padding: 0;
-                font-size: 18px; /* Aumentando o tamanho da fonte geral */
+                font-size: 18px;
             }
 
             .container {
@@ -48,7 +48,7 @@ const apiEmail = async (sender, recipients, subject, text, reflection, challenge
 
             .header h2 {
                 color: #333333;
-                font-size: 28px; /* Aumentando o tamanho da fonte */
+                font-size: 28px;
                 margin-bottom: 20px;
             }
 
@@ -61,7 +61,7 @@ const apiEmail = async (sender, recipients, subject, text, reflection, challenge
             }
 
             .content p {
-                font-size: 22px; /* Aumentando o tamanho da citação */
+                font-size: 22px;
                 line-height: 1.6;
                 text-align: center;
                 margin: 20px 0;
@@ -83,9 +83,9 @@ const apiEmail = async (sender, recipients, subject, text, reflection, challenge
             }
 
             .author-section h3 {
-                font-size: 26px; /* Destacando o nome do autor */
+                font-size: 26px;
                 margin-bottom: 15px;
-                color: #0056b3; /* Azul para o nome do autor */
+                color: #0056b3;
             }
 
             .author-section p {
@@ -115,9 +115,9 @@ const apiEmail = async (sender, recipients, subject, text, reflection, challenge
             }
 
             .additional-content h3 {
-                font-size: 24px; /* Maior destaque para os títulos */
+                font-size: 24px;
                 margin-bottom: 20px;
-                color: #3399ff; /* Azul claro */
+                color: #3399ff;
                 font-weight: 600;
             }
 
@@ -126,7 +126,7 @@ const apiEmail = async (sender, recipients, subject, text, reflection, challenge
                 line-height: 1.6;
                 margin: 10px 0;
                 padding: 15px;
-                background-color: #f0f8ff; /* Cor clara de fundo para cada tópico */
+                background-color: #f0f8ff;
                 border-radius: 5px;
                 transition: background-color 0.3s;
             }
@@ -137,7 +137,7 @@ const apiEmail = async (sender, recipients, subject, text, reflection, challenge
 
             .button {
                 display: inline-block;
-                background-color: #0056b3; /* Azul mais escuro para os botões */
+                background-color: #0056b3;
                 color: #ffffff;
                 padding: 12px 20px;
                 margin: 10px 0;
@@ -159,7 +159,7 @@ const apiEmail = async (sender, recipients, subject, text, reflection, challenge
             }
 
             .invitation h3 {
-                font-size: 24px; /* Estilo igual ao título "Além das frases diárias, explore:" */
+                font-size: 24px;
                 color: #3399ff;
                 font-weight: 600;
                 margin-bottom: 20px;
@@ -207,7 +207,7 @@ const apiEmail = async (sender, recipients, subject, text, reflection, challenge
             <hr class="section-divider">
 
             <div class="author-section">
-                <h3>${lastAuthor.nameAuthor}</h3> <!-- Nome do autor em azul destacado -->
+                <h3>${lastAuthor.nameAuthor}</h3>
                 <p>${lastAuthor.summaryBiographical || "Não disponível."}</p>
                 ${lastAuthor.imageThumbnail ? `<img src="${lastAuthor.imageThumbnail}" alt="${lastAuthor.nameAuthor}">` : ''}
                 <p>
@@ -227,7 +227,7 @@ const apiEmail = async (sender, recipients, subject, text, reflection, challenge
 
             <hr class="section-divider">
             <div class="invitation">
-                <h3>Gostou da frase de hoje? Visite nosso site para mais frases inspiradoras e conteúdos exclusivos!</h3> <!-- Estilo ajustado -->
+                <h3>Gostou da frase de hoje? Visite nosso site para mais frases inspiradoras e conteúdos exclusivos!</h3>
                 <a href="https://suasfrases.vercel.app/" target="_blank" class="button">Acesse o site do Suas Frases Diárias</a>
             </div>
 

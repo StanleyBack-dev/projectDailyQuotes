@@ -5,9 +5,9 @@ const createQuotes = async (quoteData) => {
     try {
         const quotesCollection = collection(dbFirebase, 'quotes');
         await addDoc(quotesCollection, quoteData);
-        return { success: true, message: "Frase cadastrada com sucesso." };
+        return { success: true, message: "Phrase registered successfully." };
     } catch (error) {
-        console.error("Erro ao adicionar frase:", error);
+        console.error("Error adding sentence:", error);
         throw error;
     }
 };

@@ -1,4 +1,4 @@
-// Função para mostrar um alerta personalizado
+// FUNCTION TO SHOW A CUSTOM ALERT
 function showCustomAlert(message, type = 'error') {
     const alertBox = document.createElement('div');
     alertBox.className = `custom-alert ${type}`;
@@ -6,21 +6,21 @@ function showCustomAlert(message, type = 'error') {
         ${message} <button onclick="this.parentElement.style.display='none'">Fechar</button>
     `;
 
-    // Adiciona a caixa de alerta ao contêiner de alertas personalizados
+    // ADD ALERT BOX TO CUSTOM ALERTS CONTAINER
     const alertContainer = document.getElementById('customAlertContainer');
     alertContainer.appendChild(alertBox);
 
-    // Exibe a caixa de alerta
+    // DISPLAYS THE ALERT BOX
     alertBox.style.display = 'block';
 
-    // Remove a caixa de alerta após 5 segundos
+    // REMOVE ALERT BOX AFTER 5 SECONDS
     setTimeout(() => {
         alertBox.style.display = 'none';
         alertBox.remove();
     }, 5000);
 }
 
-// Função para mostrar uma confirmação personalizada
+// FUNCTION TO SHOW A CUSTOM CONFIRMATION
 function showCustomConfirm(message) {
     return new Promise((resolve, reject) => {
         const confirmBox = document.createElement('div');
@@ -36,13 +36,13 @@ function showCustomConfirm(message) {
         document.body.appendChild(confirmBox);
 
         document.getElementById('confirmYes').addEventListener('click', () => {
-            confirmBox.remove(); // Remove a caixa de confirmação
-            resolve(true); // Resolve a promise com true
+            confirmBox.remove();
+            resolve(true);
         });
 
         document.getElementById('confirmNo').addEventListener('click', () => {
-            confirmBox.remove(); // Remove a caixa de confirmação
-            reject(false); // Rejeita a promise com false
+            confirmBox.remove();
+            reject(false);
         });
     });
 }

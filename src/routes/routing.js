@@ -20,16 +20,16 @@ router.get('/emails-count', getCountEmailsController);
 // ROUTE TO INACTIVE EMAIL IN FIREBASE
 router.put('/emails', updateEmailsController);
 
-// ROTA PARA BUSCAR TODAS AS BIOGRAFIAS DOS AUTORES
+// ROUTE TO SEARCH ALL AUTHORS BIOGRAPHIES
 router.get('/authors', getAllAuthorsController);
 
-// ROTA PARA BUSCAR A BIOGRAFIA DE UM AUTOR ESPECÍFICO
+// ROUTE TO SEARCH FOR A SPECIFIC AUTHOR'S BIOGRAPHY
 router.get('/authors/uid', getAuthorByUidController);
 
-// ROTA PARA BUSCAR A BIOGRAFIA DE UM AUTOR ESPECÍFICO
+// ROUTE TO SEARCH ALL QUOTES
 router.get('/quotes', getAllQuotesController);
 
-// ROTA PARA BUSCAR A BIOGRAFIA DE UM AUTOR ESPECÍFICO
+// ROUTE TO SEARCH FOR CITATION BY A SPECIFIC UID
 router.get('/quotes/uid', getQuoteByIdController);
 
 export default router;

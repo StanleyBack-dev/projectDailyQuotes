@@ -1,4 +1,4 @@
-/* Importando as fontes */
+/* IMPORTING SOURCES */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap');
 
 :root {
@@ -17,8 +17,8 @@
 }
 
 body {
-    background-color: var(--primary-color); /* Fundo escuro para contraste */
-    color: var(--secondary-color); /* Cor de texto clara para legibilidade */
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
@@ -30,9 +30,8 @@ header {
     text-align: center;
 }
 
-/* Menu de navegação superior */
 nav {
-    background-color: #2b2b2b; /* Fundo do menu superior */
+    background-color: #2b2b2b;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
@@ -45,7 +44,7 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    flex-wrap: wrap; /* Adiciona quebra de linha quando necessário */
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -63,14 +62,12 @@ nav ul li a {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Efeito de hover no menu superior */
 nav ul li a:hover {
     color: #e63946;
     background-color: #393939;
     border-radius: 8px;
 }
 
-/* Linha decorativa sob o link ativo no menu */
 nav ul li a::after {
     content: '';
     display: block;
@@ -174,9 +171,8 @@ main {
     font-size: 1.3em;
 }
 
-/* Container de informações */
 .info-container {
-    background-color: #f5f5f5; /* Fundo do container mais claro */
+    background-color: #f5f5f5;
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -184,10 +180,9 @@ main {
     margin-top: 50px;
     position: relative;
     overflow: hidden;
-    border-left: 5px solid #e63946; /* Cor de destaque para a borda esquerda */
+    border-left: 5px solid #e63946;
 }
 
-/* Textura sutil no fundo do container */
 .info-container::before {
     content: '';
     position: absolute;
@@ -200,11 +195,10 @@ main {
     z-index: 0;
 }
 
-/* Título da seção */
 .info-heading {
     font-family: 'Playfair Display', serif;
     font-size: 2.5em;
-    color: #333333; /* Cor do título para contraste com o fundo do container */
+    color: #333333;
     margin-bottom: 25px;
     position: relative;
     z-index: 1;
@@ -212,37 +206,33 @@ main {
     letter-spacing: 2px;
 }
 
-/* Texto informativo */
 .info-text {
     font-size: 1.2em;
     line-height: 1.8;
-    color: #444444; /* Cor do texto para harmonizar com o título */
+    color: #444444;
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
 }
 
-/* Primeiro parágrafo com texto destacado */
 .info-text:first-of-type {
     font-weight: 600;
-    color: #e63946; /* Cor de destaque para a primeira frase */
+    color: #e63946;
 }
 
-/* Slogan inspirador */
 .info-slogan {
     font-size: 1.5em;
     font-weight: 300;
     font-style: italic;
-    color: #e63946; /* Cor do slogan para combinar com os elementos de destaque */
+    color: #e63946;
     margin-top: 30px;
     position: relative;
     z-index: 1;
-    border-top: 1px solid #cccccc; /* Linha discreta para separar o slogan */
+    border-top: 1px solid #cccccc;
     padding-top: 20px;
     text-align: center;
 }
 
-/* Elemento decorativo no container */
 .info-container::after {
     content: '';
     position: absolute;
@@ -250,16 +240,14 @@ main {
     right: -50px;
     width: 150px;
     height: 150px;
-    background-color: #e63946; /* Cor decorativa combinando com os destaques */
+    background-color: #e63946;
     border-radius: 50%;
     opacity: 0.2;
     z-index: 0;
 }
 
-
-/* Menu inferior (rodapé) */
 footer {
-    background-color: #2b2b2b; /* Fundo do menu inferior */
+    background-color: #2b2b2b;
     padding: 20px 0;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -270,7 +258,7 @@ footer {
     list-style: none;
     padding: 0;
     margin: 0;
-    flex-wrap: wrap; /* Adiciona quebra de linha quando necessário */
+    flex-wrap: wrap;
 }
 
 .footer-menu li {
@@ -289,7 +277,6 @@ footer {
     color: #e63946;
 }
 
-/* Texto do rodapé */
 footer .footer-text {
     font-size: 0.9em;
     color: var(--secondary-color);
@@ -297,7 +284,6 @@ footer .footer-text {
     margin-top: 15px;
 }
 
-/* Responsividade do menu inferior */
 @media screen and (max-width: 768px) {
     .footer-menu {
         flex-direction: column;
@@ -314,57 +300,51 @@ footer .footer-text {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #2a5298; /* Cor do fundo igual à da página */
+    background-color: #2a5298;
     color: white;
-    padding: 20px; /* Aumenta o padding para maior tamanho */
-    border-radius: 10px; /* Aumenta o border-radius para mais arredondado */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.4); /* Aumenta a sombra para destaque */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     z-index: 1000;
-    display: none; /* Mantenha o alerta oculto até ser necessário */
-    width: 90%; /* Torna a largura responsiva */
-    max-width: 400px; /* Define uma largura máxima */
-    text-align: center; /* Alinha o texto ao centro */
-    box-sizing: border-box; /* Inclui padding e border no tamanho total */
+    display: none;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-sizing: border-box;
   }
   
-  /* Estilo do alerta de sucesso */
   .custom-alert.success {
-    background-color: #2b2b2b; /* Cor de fundo para sucesso */
+    background-color: #2b2b2b;
   }
   
-  /* Estilo do alerta de erro */
   .custom-alert.error {
-    background-color: #2b2b2b; /* Cor de fundo para erro */
+    background-color: #2b2b2b;
   }
   
-  /* Estilo do botão de fechar */
   .custom-alert button {
     background: none;
     border: none;
-    color: #ffeb3b; /* Cor diferente do texto da mensagem para destaque */
+    color: #ffeb3b;
     cursor: pointer;
-    font-size: 1.2rem; /* Aumenta o tamanho da fonte do botão */
-    margin-top: 10px; /* Adiciona margem acima do botão */
+    font-size: 1.2rem;
+    margin-top: 10px;
   }
   
-  /* Estilo para garantir que o botão se destaque */
   .custom-alert.error button {
-    color: #ffffff; /* Cor do botão para alerta de erro */
+    color: #ffffff;
   }
   
   .custom-alert.success button {
-    color: #ffffff; /* Cor do botão para alerta de sucesso */
+    color: #ffffff;
   }
   
-  /* Estilo adicional para o botão de fechar */
   .custom-alert button::before {
-    content: '✖ '; /* Adiciona um ícone de fechar */
+    content: '✖ ';
   }
   
-  /* Responsividade da caixa de alerta */
   @media (max-width: 768px) {
     .custom-alert {
-      width: 95%; /* Ajusta a largura para dispositivos menores */
-      max-width: 90%; /* Define uma largura máxima menor */
+      width: 95%;
+      max-width: 90%;
     }
   }

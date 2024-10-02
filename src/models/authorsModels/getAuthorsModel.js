@@ -1,7 +1,7 @@
 import { dbFirebase } from "../../../firebaseConfig.js";
 import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore';
 
-// Função para buscar todos os autores
+// FUNCTION TO SEARCH FOR ALL AUTHORS
 const getAllAuthor = async () => {
     try {
         const authorsCollection = collection(dbFirebase, 'authors');
@@ -12,12 +12,12 @@ const getAllAuthor = async () => {
         }));
         return authorsList;
     } catch (error) {
-        console.error("Erro ao buscar todos os autores: ", error);
+        console.error("Error fetching all authors: ", error);
         throw error;
     }
 };
 
-// Função para buscar um autor pelo UID
+// FUNCTION TO SEARCH FOR AN AUTHOR BY UID
 const getAuthorByUid = async (uid) => {
     try {
         const authorDocRef = doc(dbFirebase, 'authors', uid);
@@ -29,15 +29,15 @@ const getAuthorByUid = async (uid) => {
                 ...authorDoc.data()
             };
         } else {
-            throw new Error("Autor não encontrado");
+            throw new Error("Author not found");
         }
     } catch (error) {
-        console.error(`Erro ao buscar o autor com UID ${uid}: `, error);
+        console.error(`Error fetching author with UID ${uid}: `, error);
         throw error;
     }
 };
 
-// Função para buscar o último autor inserido
+// FUNCTION TO SEARCH FOR THE LAST INSERTED AUTHOR
 const getLastAuthor = async () => {
     try {
         const authorsCollection = collection(dbFirebase, 'authors');
@@ -51,10 +51,10 @@ const getLastAuthor = async () => {
                 ...lastAuthorDoc.data()
             };
         } else {
-            throw new Error("Nenhum autor encontrado");
+            throw new Error("No author found");
         }
     } catch (error) {
-        console.error("Erro ao buscar o último autor inserido: ", error);
+        console.error("Error fetching last inserted author: ", error);
         throw error;
     }
 };
