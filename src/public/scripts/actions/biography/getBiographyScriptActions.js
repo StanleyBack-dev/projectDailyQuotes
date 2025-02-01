@@ -58,6 +58,51 @@ const openBiographyModal = (author) => {
     biographyModal.style.display = 'block';
 };
 
+const searchInput = document.getElementById('searchAuthor');
+
+searchInput.addEventListener('input', (event) => {
+    const searchQuery = event.target.value.toLowerCase();
+    filterAuthors(searchQuery);
+});
+
+const filterAuthors = (query) => {
+    const authorCards = document.querySelectorAll('.author-card');
+
+    authorCards.forEach(card => {
+        const authorName = card.querySelector('.author-name').textContent.toLowerCase();
+        if (authorName.includes(query)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+};
+
+const searchAuthors = async (query) => {
+    try {
+        const response = await fetch(`/authors/search/${query}`);
+        const result = await response.json();
+
+        if (result.success) {
+            displayAuthors(result.data);
+        } else {
+            showCustomAlert('Nenhum autor encontrado.');
+        }
+    } catch (error) {
+        console.error('Erro ao buscar autores:', error);
+        showCustomAlert('Erro ao buscar autores.');
+    }
+};
+
+searchInput.addEventListener('input', (event) => {
+    const searchQuery = event.target.value.trim();
+    if (searchQuery.length > 0) {
+        searchAuthors(searchQuery);
+    } else {
+        fetchAuthors(); // Recarrega todos os autores se o campo estiver vazio
+    }
+});
+
 // CLOSE THE MODAL
 closeModal.addEventListener('click', () => {
     biographyModal.style.display = 'none';

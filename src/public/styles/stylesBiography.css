@@ -249,3 +249,28 @@ footer {
     color: var(--modal-text-color);
     line-height: 1.6;
 }
+
+#searchAuthor {
+    width: 40%; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+#searchAuthor:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #searchAuthor {
+        width: 100%;
+        font-size: 14px;
+    }
+}

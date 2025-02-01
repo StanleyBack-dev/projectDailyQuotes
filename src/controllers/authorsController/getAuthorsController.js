@@ -42,4 +42,27 @@ const getAuthorByUidController = async (req, res) => {
     }
 };
 
-export { getAllAuthorsController, getAuthorByUidController };
+const searchAuthorsController = async (req, res) => {
+    try {
+        const { query } = req.params;
+        const authors = await getAllAuthor();
+        
+        const filteredAuthors = authors.filter(author => 
+            author.nameAuthor.toLowerCase().includes(query.toLowerCase())
+        );
+
+        res.status(200).json({
+            success: true,
+            data: filteredAuthors
+        });
+    } catch (error) {
+        console.error("Erro ao buscar autores:", error);
+        res.status(500).json({
+            success: false,
+            message: "Erro ao buscar autores"
+        });
+    }
+};
+
+
+export { getAllAuthorsController, getAuthorByUidController, searchAuthorsController };

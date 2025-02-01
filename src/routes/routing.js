@@ -2,7 +2,7 @@ import express from 'express';
 import { getEmailsController, getCountEmailsController } from '../controllers/emailsController/getEmailsController.js';
 import { createEmailsController } from '../controllers/emailsController/createEmailsController.js';
 import { updateEmailsController } from '../controllers/emailsController/updateEmailsController.js';
-import { getAllAuthorsController, getAuthorByUidController } from '../controllers/authorsController/getAuthorsController.js';
+import { getAllAuthorsController, getAuthorByUidController, searchAuthorsController  } from '../controllers/authorsController/getAuthorsController.js';
 import { getAllQuotesController, getQuoteByIdController } from '../controllers/quotesController/getQuotesController.js';
 
 // INITIALIZE EXPRESS SETTINGS
@@ -31,5 +31,8 @@ router.get('/quotes', getAllQuotesController);
 
 // ROUTE TO SEARCH FOR CITATION BY A SPECIFIC UID
 router.get('/quotes/uid', getQuoteByIdController);
+
+// ROUTE TO SEARCH BY AUTHOR NAME 
+router.get('/authors/search/:query', searchAuthorsController);
 
 export default router;
